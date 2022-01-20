@@ -6,7 +6,24 @@ const Employee = () =>{
     console.log(employees);
     return(
         <div className="ui grid container">
-            <p>Hello Employee</p>
+                {employees && employees.map((employee)=>{
+                    return(
+                        <div className="four wide column" key={employee.id}>
+                                <div className="ui link cards">
+                                    <div className="card">
+                                        <div className="image">
+                                            <img src="" alt={employee.name} />
+                                        </div>
+                                        <div className="content">
+                                            <div className="header">{employee.name}</div>
+                                            <div className="meta">{employee.title}</div>
+                                            <div className="meta">{employee.department}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    );
+                })}
         </div>
     );
 };
