@@ -12,7 +12,7 @@ const Employee = () =>{
                                 <div className="ui link cards">
                                     <div className="card">
                                         <div className="image">
-                                            <img src="" alt={employee.name} />
+                                            <img src="https://i.pravatar.cc" alt={employee.name} />
                                         </div>
                                         <div className="content">
                                             <div className="header">{employee.name}</div>
