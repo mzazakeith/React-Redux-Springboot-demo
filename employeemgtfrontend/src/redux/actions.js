@@ -15,6 +15,12 @@ export const selectedEmployee = employee => {
     }
 }
 
+export const removeSelectedEmployee = employee => {
+    return{
+        type: ActionTypes.REMOVE_SELECTED_EMPLOYEE
+    }
+}
+
 export const addEmployee = (name, email, role) => async (dispatch) =>{
     const config = {
         headers:{

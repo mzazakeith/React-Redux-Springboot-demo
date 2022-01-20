@@ -10,3 +10,16 @@ export const employeeReducer = (state=[],action) => {
             return state;
     }
 };
+
+export const selectedEmployeeReducer = (state={},action) => {
+    switch (action.type) {
+        case ActionTypes.SELECTED_EMPLOYEE:
+            return {
+                ...state, ...action.payload
+            }
+        case ActionTypes.REMOVE_SELECTED_EMPLOYEE:
+            return {};
+        default:
+            return state;
+    }
+}
