@@ -28,7 +28,11 @@ const EmployeeDetails = () =>{
 
     return(
         <div className="ui grid container">
-
+            {Object.keys(employee).length === 0 ? (
+                <div>...Loading</div>
+            ) : (
+                <div>{employee.name}</div>
+                )}
 
         </div>
     );
