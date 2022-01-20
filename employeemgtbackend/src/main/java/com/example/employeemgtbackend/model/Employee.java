@@ -19,6 +19,8 @@ public class Employee {
     private String email;
     private String department;
     private String title;
+    @Column(length=1000)
+    private String description;
 
     public Employee(String name, String email, String department, String title) {
         this.name = name;
