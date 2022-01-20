@@ -16,8 +16,8 @@ const Employee = () =>{
                                         </div>
                                         <div className="content">
                                             <div className="header">{employee.name}</div>
-                                            <div className="meta">{employee.title}</div>
-                                            <div className="meta">{employee.department}</div>
+                                            <div className="meta description">{employee.title}</div>
+                                            <div className="meta description">{employee.department}</div>
                                         </div>
                                     </div>
                                 </div>
