@@ -1,13 +1,12 @@
 package com.example.employeemgtbackend.controller;
 
+import com.example.employeemgtbackend.exception.EmployeeNotFoundException;
 import com.example.employeemgtbackend.model.Employee;
 import com.example.employeemgtbackend.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +20,10 @@ public class EmployeeController {
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>>getEmployees(){
         return ResponseEntity.ok().body(employeeService.getEmployees());
+    }
+    @GetMapping("employee/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long employeeId) throws EmployeeNotFoundException {
+        return new ResponseEntity<Employee>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
     }
 
 
