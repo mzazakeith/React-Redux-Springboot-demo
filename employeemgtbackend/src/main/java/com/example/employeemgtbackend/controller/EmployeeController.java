@@ -1,4 +1,4 @@
 package com.example.employeemgtbackend.controller;
 
-public class EmployeeContrloller {
+public class EmployeeController {
 }
