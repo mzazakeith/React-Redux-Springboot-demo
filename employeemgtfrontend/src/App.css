@@ -4,6 +4,17 @@
   margin: 0;
 }
 
+.ui.cards > .card > .image {
+  height: 250px;
+  padding: 20px;
+  background: #fff;
+  margin: auto;
+}
+.ui.cards > .card > .image > img {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+}
 .ui.cards > .card > .content > .header {
   height: 48px;
   overflow: hidden;
@@ -48,7 +59,12 @@
   align-self: flex-start !important;
 }
 
+.ui.grid > .row > .column > img,
+.ui.grid > .row > img {
+  height: 100%;
+}
 .ui.placeholder .header:not(:first-child):before,
+.ui.placeholder .image:not(:first-child):before,
 .ui.placeholder .paragraph:not(:first-child):before {
   display: none;
 }
