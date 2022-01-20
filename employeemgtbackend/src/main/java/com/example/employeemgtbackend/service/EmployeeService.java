@@ -1,5 +1,6 @@
 package com.example.employeemgtbackend.service;
 
+import com.example.employeemgtbackend.exception.EmployeeNotFoundException;
 import com.example.employeemgtbackend.model.Employee;
 import com.example.employeemgtbackend.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,5 +18,9 @@ public class EmployeeService {
     public List<Employee> getEmployees() {
         log.info("Fetching all users");
         return employeeRepository.findAll();
+    }
+
+    public Employee getEmployeeById(long id) throws EmployeeNotFoundException {
+        return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException("Employee", "Id",id));
     }
 }
