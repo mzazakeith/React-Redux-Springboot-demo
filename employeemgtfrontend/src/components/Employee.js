@@ -1,14 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
 const Employee = () =>{
     const employees = useSelector((state) => state.allEmployees.employees);
-    console.log(employees);
     return(
         <div className="ui grid container">
                 {employees && employees.map((employee)=>{
                     return(
                         <div className="four wide column" key={employee.id}>
+                            <Link to={`/employee/${employee.id}`}>
                                 <div className="ui link cards">
                                     <div className="card">
                                         <div className="image">
@@ -21,6 +22,7 @@ const Employee = () =>{
                                         </div>
                                     </div>
                                 </div>
+                            </Link>
                         </div>
                     );
                 })}
