@@ -1,4 +1,4 @@
-package com.example.employeemgtbackend.exception;
+package com.example.employeemgtbackend.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
