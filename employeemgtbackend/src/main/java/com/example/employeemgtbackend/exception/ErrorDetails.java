@@ -1,13 +1,15 @@
 package com.example.employeemgtbackend.exception;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 import java.util.Date;
 
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class ErrorDetails {
     private Date timestamp;
     private String message;

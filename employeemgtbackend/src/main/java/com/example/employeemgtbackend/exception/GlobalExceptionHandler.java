@@ -13,7 +13,7 @@ import java.util.Date;
 public class GlobalExceptionHandler {
     //    handle specific exceptions
     @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<?> handleResourceNotFoundException(EmployeeNotFoundException exception, WebRequest request){
+    public ResponseEntity<?> handleEmployeeNotFoundException(EmployeeNotFoundException exception, WebRequest request){
         ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(), request.getDescription(false));
         return new ResponseEntity(errorDetails, HttpStatus.NOT_FOUND);
     }
