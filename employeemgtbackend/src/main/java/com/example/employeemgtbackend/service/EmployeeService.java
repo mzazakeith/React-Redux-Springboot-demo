@@ -21,6 +21,7 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeById(long id) throws EmployeeNotFoundException {
+        log.info("Fetching user with id {}", id);
         return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException("Employee", "Id",id));
     }
 }
