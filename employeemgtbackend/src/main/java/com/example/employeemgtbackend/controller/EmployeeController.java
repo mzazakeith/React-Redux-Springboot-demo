@@ -21,7 +21,7 @@ public class EmployeeController {
     public ResponseEntity<List<Employee>>getEmployees(){
         return ResponseEntity.ok().body(employeeService.getEmployees());
     }
-    @GetMapping("employee/{id}")
+    @GetMapping("/employee/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long employeeId) throws EmployeeNotFoundException {
         return new ResponseEntity<Employee>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
     }
