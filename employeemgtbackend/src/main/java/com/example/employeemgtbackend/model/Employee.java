@@ -22,11 +22,12 @@ public class Employee {
     @Column(length=1000)
     private String description;
 
-    public Employee(String name, String email, String department, String title) {
+    public Employee(String name, String email, String department, String title, String description) {
         this.name = name;
         this.email = email;
         this.department = department;
         this.title = title;
+        this.description = description;
     }
 }
 
