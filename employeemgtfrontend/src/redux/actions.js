@@ -25,9 +25,10 @@ export const addEmployee = (name, email,department,title,description) => async (
     const config = {
         headers:{
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
         }
     };
-    const response = await axios.post("http://localhost:8080/employee/save",{name,email,department,title,description},config)
+    const response = await axios.post("http://localhost:8080/api/employee/save",{name,email,department,title,description},config)
         .catch((err)=>{
             console.log("Err",err);
         });

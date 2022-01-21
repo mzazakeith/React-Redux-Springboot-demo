@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
+import {addEmployee} from "../redux/actions";
 
 const AddEmployee = () =>{
     const dispatch = useDispatch();
@@ -12,11 +13,29 @@ const AddEmployee = () =>{
     const[title, setTitle] = useState("");
     const[description, setDescription] = useState("");
 
+    const nameHandler = (e) => {
+        setName(e.target.value);
+    };
 
+    const emailHandler = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const departmentHandler = (e) => {
+        setDepartment(e.target.value);
+    };
+
+    const titleHandler = (e) => {
+        setTitle(e.target.value);
+    };
+
+    const descriptionHandler = (e) => {
+        setDescription(e.target.value);
+    };
 
     const submitHandler = (e) => {
         e.preventDefault();
-        // dispatch(AddEmployee())
+        dispatch(addEmployee(name, email,department,title,description))
         history.push("/");
     };
 
@@ -25,23 +44,23 @@ const AddEmployee = () =>{
             <form className="ui form big" onSubmit={submitHandler}>
                 <div className="field">
                     <label>Full Name</label>
-                    <input type="text" value={name}  onChange={setName} placeholder="John Smith"/>
+                    <input type="text" value={name}  onChange={nameHandler} placeholder="John Smith"/>
                 </div>
                 <div className="field">
                     <label>Email</label>
-                    <input type="email" value={email} onChange={setEmail} placeholder="johnsmith@gmail.com"/>
+                    <input type="email" value={email} onChange={emailHandler} placeholder="johnsmith@gmail.com"/>
                 </div>
                 <div className="field">
                     <label>Department</label>
-                    <input type="text" value={department} onChange={setDepartment} placeholder="Finance"/>
+                    <input type="text" value={department} onChange={departmentHandler} placeholder="Finance"/>
                 </div>
                 <div className="field">
                     <label>Title</label>
-                    <input type="text" value={title} onChange={setTitle} placeholder="Manager"/>
+                    <input type="text" value={title} onChange={titleHandler} placeholder="Manager"/>
                 </div>
                 <div className="field">
                     <label>Job Description</label>
-                    <textarea rows="2" value={description} onChange={setDescription} />
+                    <textarea rows="2" value={description} onChange={descriptionHandler} />
                 </div>
                 <button className="ui button" type="submit">Add</button>
             </form>
