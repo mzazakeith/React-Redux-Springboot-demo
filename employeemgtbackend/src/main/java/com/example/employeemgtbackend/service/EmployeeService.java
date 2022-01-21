@@ -24,4 +24,9 @@ public class EmployeeService {
         log.info("Fetching user with id {}", id);
         return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException("Employee", "Id",id));
     }
+
+    public Employee saveUser(Employee employee) {
+        log.info("Saving new user {} to the database", employee.getName());
+        return employeeRepository.save(employee);
+    }
 }
