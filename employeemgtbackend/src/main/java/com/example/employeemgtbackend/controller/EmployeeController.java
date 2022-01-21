@@ -28,4 +28,9 @@ public class EmployeeController {
     public ResponseEntity<Employee>saveUser(@RequestBody Employee employee){
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
     }
+
+    @PutMapping("/employee/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long employeeId, @RequestBody Employee employee) throws EmployeeNotFoundException {
+        return new ResponseEntity<Employee>(employeeService.updateEmployee(employee,employeeId),HttpStatus.ACCEPTED);
+    }
 }

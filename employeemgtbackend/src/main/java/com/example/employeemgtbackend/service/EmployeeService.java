@@ -39,6 +39,7 @@ public class EmployeeService {
         existingEmployee.setTitle(employee.getTitle());
         existingEmployee.setDescription(employee.getDescription());
         employeeRepository.save(existingEmployee);
+        log.info("Saving new user {} to the database", employee.getName());
         return existingEmployee;
     }
 }
