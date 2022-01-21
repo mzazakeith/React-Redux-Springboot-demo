@@ -21,13 +21,13 @@ export const removeSelectedEmployee = employee => {
     }
 }
 
-export const addEmployee = (name, email, role) => async (dispatch) =>{
+export const addEmployee = (name, email,department,title,description) => async (dispatch) =>{
     const config = {
         headers:{
             "Content-Type": "application/json",
         }
     };
-    const response = await axios.post(``,{name, email, role},config)
+    const response = await axios.post(``,{name,email,department,title,description},config)
         .catch((err)=>{
             console.log("Err",err);
         });

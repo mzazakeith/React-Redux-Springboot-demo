@@ -1,6 +1,10 @@
 import React from "react";
 
 const AddEmployee = () =>{
+    const submitHandler = (e) => {
+        e.preventDefault();
+    };
+
     return(
         <div className="ui container">
             <form className="ui form big">
@@ -14,23 +18,20 @@ const AddEmployee = () =>{
                 </div>
                 <div className="field">
                     <label>Department</label>
-                    <input type="text" name="last-name" placeholder="Finance"/>
+                    <input type="text" name="department" placeholder="Finance"/>
                 </div>
                 <div className="field">
                     <label>Title</label>
-                    <input type="text" name="last-name" placeholder="Manager"/>
+                    <input type="text" name="title" placeholder="Manager"/>
                 </div>
                 <div className="field">
                     <label>Job Description</label>
-                    <textarea rows="2"/>
+                    <textarea rows="2" name="description"/>
                 </div>
-                <button className="ui button" type="submit">Add</button>
+                <button className="ui button" type="submit" onClick={submitHandler}>Add</button>
             </form>
         </div>
     )
 };
 
 export default AddEmployee;
-
-
-//     "description
