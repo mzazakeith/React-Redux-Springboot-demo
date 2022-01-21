@@ -42,4 +42,9 @@ public class EmployeeService {
         log.info("Saving new user {} to the database", employee.getName());
         return existingEmployee;
     }
+
+    public void deleteEmployee(long id) throws EmployeeNotFoundException {
+        employeeRepository.findById(id).orElseThrow(() ->new EmployeeNotFoundException("Employee", "Id",id));
+        employeeRepository.deleteById(id);
+    }
 }
