@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
-import {employeeReducer, selectedEmployeeReducer} from './employeeReducer'
+import {addEmployeeReducer, employeeReducer, selectedEmployeeReducer} from './employeeReducer'
 
 const reducers = combineReducers({
     allEmployees: employeeReducer,
-    employee: selectedEmployeeReducer
+    employee: selectedEmployeeReducer,
+    newEmployee:addEmployeeReducer
 });
 
 export default reducers

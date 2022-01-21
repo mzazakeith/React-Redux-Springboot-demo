@@ -23,3 +23,14 @@ export const selectedEmployeeReducer = (state={},action) => {
             return state;
     }
 }
+
+export const addEmployeeReducer = (state={},action)=>{
+    switch (action.type){
+        case ActionTypes.ADD_EMPLOYEE:
+            return{
+                ...state, employee:action.payload
+            }
+        default:
+            return state;
+    }
+}
