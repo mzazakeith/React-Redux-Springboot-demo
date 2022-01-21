@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Column;
 import java.util.List;
 
 @Service
@@ -28,5 +29,16 @@ public class EmployeeService {
     public Employee saveEmployee(Employee employee) {
         log.info("Saving new user {} to the database", employee.getName());
         return employeeRepository.save(employee);
+    }
+
+    public Employee updateEmployee(Employee employee, long id) throws EmployeeNotFoundException {
+        Employee existingEmployee = employeeRepository.findById(id).orElseThrow(() ->new EmployeeNotFoundException("Employee", "Id",id));
+        existingEmployee.setName(employee.getName());
+        existingEmployee.setEmail(employee.getEmail());
+        existingEmployee.setDepartment(employee.getDepartment());
+        existingEmployee.setTitle(employee.getTitle());
+        existingEmployee.setDescription(employee.getDescription());
+        employeeRepository.save(existingEmployee);
+        return existingEmployee;
     }
 }
