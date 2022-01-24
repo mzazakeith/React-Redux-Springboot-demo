@@ -5,7 +5,9 @@ const Header = () => {
     return(
         <div className="ui grey inverted fixed menu">
             <div className="ui container center">
-                <h2>Simple Employee Management System</h2>
+                <Link to={"/"}>
+                    <h2>Simple Employee Management System</h2>
+                </Link>
             </div>
             <div className="ui right floated">
                 <Link to={"/save/employee/"}>
