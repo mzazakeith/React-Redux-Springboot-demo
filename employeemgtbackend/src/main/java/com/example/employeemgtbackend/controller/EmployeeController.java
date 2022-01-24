@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -30,7 +31,7 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
     }
 
-    @PutMapping("/employee/{id}")
+    @PutMapping("/employee/update/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") @Valid long employeeId, @RequestBody Employee employee) throws EmployeeNotFoundException {
         return new ResponseEntity<Employee>(employeeService.updateEmployee(employee,employeeId),HttpStatus.ACCEPTED);
     }
