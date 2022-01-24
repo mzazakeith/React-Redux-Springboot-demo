@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {removeSelectedEmployee, selectedEmployee} from "../redux/actions";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 
 const EmployeeDetails = () =>{
@@ -31,7 +31,9 @@ const EmployeeDetails = () =>{
             {Object.keys(employee).length === 0 ? (
                 <div>...Loading</div>
             ) : (
-                <div>{employee.name}</div>
+                <Link to={`/update/employee/${employee.id}`}>
+                    <div>{employee.name}</div>
+                </Link>
                 )}
 
         </div>

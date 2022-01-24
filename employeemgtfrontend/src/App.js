@@ -4,6 +4,7 @@ import Header from './components/Header';
 import EmployeeListing from './components/EmployeeListing'
 import EmployeeDetails from './components/EmployeeDetails'
 import AddEmployee from "./components/AddEmployee";
+import UpdateEmployee from "./components/UpdateEmployee";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" exact component={EmployeeListing}/>
             <Route path="/employee/:employeeId" exact component={EmployeeDetails}/>
             <Route path="/save/employee/" exact component={AddEmployee}/>
+            <Route path="/update/employee/:employeeId" exact component={UpdateEmployee}/>
             <Route>404 Not Found!</Route>
           </Switch>
         </Router>
