@@ -45,3 +45,14 @@ export const updateEmployeeReducer = (state={}, action) => {
             return state;
     }
 }
+
+export const deleteEmployeeReducer = (state={}, action) =>{
+    switch (action.type){
+        case ActionTypes.DELETE_EMPLOYEE:
+            return{
+                ...state, ...action.payload
+            }
+        default:
+            return state;
+    }
+}

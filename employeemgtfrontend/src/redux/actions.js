@@ -54,3 +54,20 @@ export const updateEmployee = (employeeId,name, email, department, title, descri
             payload:response.data
         })
 }
+
+export const deleteEmployee = (employeeId) => async (dispatch) => {
+    const config = {
+        headers:{
+            "Access-Control-Allow-Origin": "*",
+        }
+    }
+    const response = await axios.delete(`http://localhost:8080/api/employee/delete/${employeeId}`,config)
+        .catch((err)=>{
+            console.log("Err",err);
+        });
+    dispatch({
+        type:ActionTypes.UPDATE_EMPLOYEE,
+        payload:response.data
+    })
+
+}
