@@ -36,7 +36,7 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employeeService.updateEmployee(employee,employeeId),HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/employee/delete/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable("id") long employeeId) throws EmployeeNotFoundException {
         employeeService.deleteEmployee(employeeId);
         return new ResponseEntity<String>("Employee deleted successfully", HttpStatus.OK);
